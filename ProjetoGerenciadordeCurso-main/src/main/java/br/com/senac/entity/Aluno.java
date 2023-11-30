@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -15,6 +17,10 @@ public class Aluno {
 	private Integer id;
 		
 	private String nome;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_turma")
+	private Turma turma;
 	
 //	@ManyToMany
 //	@JoinColumn(name = "id_curso", referencedColumnName = "id")

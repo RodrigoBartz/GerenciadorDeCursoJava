@@ -41,6 +41,7 @@ public class AlunoService {
 		Aluno alunoBD = alunoRepo.findById(id).orElse(null);
 		if(alunoBD != null) {
 			alunoBD.setNome(alunoAlterado.getNome());
+			alunoBD.setTurma(alunoAlterado.getTurma());
 			return alunoRepo.save(alunoBD);
 		}else {
 			return null;
